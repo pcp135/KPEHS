@@ -1,0 +1,6 @@
+{
+    "model_path":      "samplePythonBenchmark.pickle",
+    "submission_path": "samplePythonBenchmark.csv",
+    "train_path":      "train.csv",
+    "test_path":       "test.csv"
+}
