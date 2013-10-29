@@ -1,14 +1,5 @@
 #!/bin/bash
 
-#Random Stuff
-sudo apt-get update
-sudo apt-get install -y unzip
-
-#Python setup
-wget -nd http://09c8d0b2229f813c1b93-c95ac804525aac4b6dba79b00b39d1d3.r79.cf1.rackcdn.com/Anaconda-1.7.0-Linux-x86_64.sh
-bash Anaconda-1.7.0-Linux-x86_64.sh
-rm Anaconda-1.7.0-Linux-x86_64.sh
-
 #Clone dotfiles
 cd $HOME
 if [ -d ./dotfiles/ ]; then
@@ -23,6 +14,16 @@ ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
+
+#Random Stuff
+sudo apt-get update
+sudo apt-get install -y unzip
+
+#Python setup
+wget -nd http://09c8d0b2229f813c1b93-c95ac804525aac4b6dba79b00b39d1d3.r79.cf1.rackcdn.com/Anaconda-1.7.0-Linux-x86_64.sh
+bash Anaconda-1.7.0-Linux-x86_64.sh
+rm Anaconda-1.7.0-Linux-x86_64.sh
+conda update conda
 
 # Generate new key with no passphrase
 ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
